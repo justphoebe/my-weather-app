@@ -101,3 +101,7 @@ unit.addEventListener ("click", changeUnit );
 
 let currentlocation = document.querySelector("#current-location-button");
 currentlocation.addEventListener ("click", displayCurrentcity);
+
+let celsiustemperature = null;
+
+displayCurrentcity();
