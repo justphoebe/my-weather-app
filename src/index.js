@@ -91,7 +91,7 @@ let checkBox = document.querySelector("#formSwitchCheckDefault");
 let temp = document.querySelector("#temperature");
 
 if (checkBox.checked == true) {
-  temp.innerHTML = `${(celsiustemperature * 9)/5  + 32 }°F`;
+  temp.innerHTML = `${Math.round((celsiustemperature * 9)/5  + 32 )}°F`;
 } else {
   temp.innerHTML = `${celsiustemperature}°C`
 }
