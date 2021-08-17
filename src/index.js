@@ -19,6 +19,8 @@ let humidityElement = document.querySelector("#humidity");
 humidityElement.innerHTML =`${humidity}`;
 let windElement = document.querySelector("#wind");
 windElement.innerHTML =`${wind}`;
+let iconElement = document.querySelector("#icon");
+iconElement.setAttribute("src", `images/iconweather-${response.data.weather[0].icon}.png`);
 
 
 }
@@ -50,6 +52,8 @@ let humidityElement = document.querySelector("#humidity");
 humidityElement.innerHTML =`${humidity}`;
 let windElement = document.querySelector("#wind");
 windElement.innerHTML =`${wind}`;
+let iconElement = document.querySelector("#icon");
+iconElement.setAttribute("src", `images/iconweather-${response.data.weather[0].icon}.png`);
 }
 
 function showCurrentPosition (position) {
