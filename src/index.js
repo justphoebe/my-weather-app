@@ -7,25 +7,6 @@ let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "S
 let weekday = days[now.getDay()];
 today.innerHTML= `${weekday} ${hours}:${minutes}`;
 
-function editTemp (response) {
-
-let temperature = Math.round(response.data.main.temp);
-let humidity = Math.round(response.data.main.humidity);
-let wind = Math.round(response.data.wind.speed);
-console.log ("hello 2");
-let temperaturedisplay = document.querySelector("#temperature");
-temperaturedisplay.innerHTML = `${temperature}°C`;
-celsiustemperature = Math.round(response.data.main.temp);
-let humidityElement = document.querySelector("#humidity");
-humidityElement.innerHTML =`${humidity}`;
-let windElement = document.querySelector("#wind");
-windElement.innerHTML =`${wind}`;
-let iconElement = document.querySelector("#icon");
-iconElement.setAttribute("src", `images/iconweather-${response.data.weather[0].icon}.png`);
-iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
-
-
-}
 
 function displayCity(event){
 event.preventDefault();
@@ -34,9 +15,7 @@ let citydisplay = document.querySelector("#cityheading");
 let currentcity = document.querySelector("#city-input");
 let apiStart = "https://api.openweathermap.org/data/2.5/weather?";
 let apiUrl = `${apiStart}q=${currentcity.value}&appid=${apiKey}&units=metric`;
-citydisplay.innerHTML = `${currentcity.value}`
-console.log (apiUrl);
-axios.get(apiUrl).then(editTemp);
+axios.get(apiUrl).then(editHeading);
 
 }
 function editHeading (response){
