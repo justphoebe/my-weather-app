@@ -10,8 +10,8 @@ today.innerHTML= `${weekday} ${hours}:${minutes}`;
 function editTemp (response) {
 
 let temperature = Math.round(response.data.main.temp);
-let temperaturedisplay = document.querySelector("#temperature");
-temperaturedisplay.innerHTML = `${temperature}°C`;
+let temperatureElement = document.querySelector("#temperature");
+temperatureElement.innerHTML = `${temperature}°C`;
 
 }
 
@@ -32,10 +32,7 @@ console.log (response);
 console.log (response.data.name);
 let citydisplay = document.querySelector("#cityheading");
 citydisplay.innerHTML = `${response.data.name}`;
-let temperature = Math.round(response.data.main.temp);
-let temperaturedisplay = document.querySelector("#temperature");
-temperaturedisplay.innerHTML = `${temperature}°C`;
- 
+editTemp(); 
 }
 
 function showCurrentPosition (position) {
