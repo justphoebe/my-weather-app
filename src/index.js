@@ -36,6 +36,9 @@ let windElement = document.querySelector("#wind");
 windElement.innerHTML =`${wind}`;
 let iconElement = document.querySelector("#icon");
 iconElement.setAttribute("src", `images/iconweather-${response.data.weather[0].icon}.png`);
+iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
+let descriptionElement = document.querySelector("#description");
+descriptionElement.innerHTML = `${response.data.weather[0].description}`;
 }
 
 function showCurrentPosition (position) {

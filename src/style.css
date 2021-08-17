@@ -28,6 +28,13 @@ h1.title {
   font-size: 30px;
 }
 
+.forecast .description {
+  color: #0f0f0f;
+  font-style: italic;
+  font-size: 28px;
+  text-transform: capitalize;
+}
+
 .top {
   position: relative;
 }
