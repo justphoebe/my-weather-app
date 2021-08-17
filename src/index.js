@@ -10,8 +10,16 @@ today.innerHTML= `${weekday} ${hours}:${minutes}`;
 function editTemp (response) {
 
 let temperature = Math.round(response.data.main.temp);
-let temperatureElement = document.querySelector("#temperature");
-temperatureElement.innerHTML = `${temperature}°C`;
+let humidity = Math.round(response.data.main.humidity);
+let wind = Math.round(response.data.wind.speed);
+console.log ("hello 2");
+let temperaturedisplay = document.querySelector("#temperature");
+temperaturedisplay.innerHTML = `${temperature}°C`;
+let humidityElement = document.querySelector("#humidity");
+humidityElement.innerHTML =`${humidity}`;
+let windElement = document.querySelector("#wind");
+windElement.innerHTML =`${wind}`;
+
 
 }
 
@@ -32,7 +40,16 @@ console.log (response);
 console.log (response.data.name);
 let citydisplay = document.querySelector("#cityheading");
 citydisplay.innerHTML = `${response.data.name}`;
-editTemp(); 
+let temperature = Math.round(response.data.main.temp);
+console.log (temperature);
+let humidity = Math.round(response.data.main.humidity);
+let wind = Math.round(response.data.wind.speed);
+let temperaturedisplay = document.querySelector("#temperature");
+temperaturedisplay.innerHTML = `${temperature}°C`;
+let humidityElement = document.querySelector("#humidity");
+humidityElement.innerHTML =`${humidity}`;
+let windElement = document.querySelector("#wind");
+windElement.innerHTML =`${wind}`;
 }
 
 function showCurrentPosition (position) {
