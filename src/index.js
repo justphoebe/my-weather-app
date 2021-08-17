@@ -15,6 +15,7 @@ let wind = Math.round(response.data.wind.speed);
 console.log ("hello 2");
 let temperaturedisplay = document.querySelector("#temperature");
 temperaturedisplay.innerHTML = `${temperature}°C`;
+celsiustemperature = Math.round(response.data.main.temp);
 let humidityElement = document.querySelector("#humidity");
 humidityElement.innerHTML =`${humidity}`;
 let windElement = document.querySelector("#wind");
@@ -45,6 +46,7 @@ let citydisplay = document.querySelector("#cityheading");
 citydisplay.innerHTML = `${response.data.name}`;
 let temperature = Math.round(response.data.main.temp);
 console.log (temperature);
+celsiustemperature = Math.round(response.data.main.temp);
 let humidity = Math.round(response.data.main.humidity);
 let wind = Math.round(response.data.wind.speed);
 let temperaturedisplay = document.querySelector("#temperature");
@@ -89,9 +91,9 @@ let checkBox = document.querySelector("#formSwitchCheckDefault");
 let temp = document.querySelector("#temperature");
 
 if (checkBox.checked == true) {
-  temp.innerHTML = `7°F`;
+  temp.innerHTML = `${(celsiustemperature * 9)/5  + 32 }°F`;
 } else {
-  temp.innerHTML = `18°C`
+  temp.innerHTML = `${celsiustemperature}°C`
 }
 
 }
