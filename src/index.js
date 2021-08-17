@@ -39,7 +39,10 @@ iconElement.setAttribute("src", `images/iconweather-${response.data.weather[0].i
 iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 let descriptionElement = document.querySelector("#description");
 descriptionElement.innerHTML = `${response.data.weather[0].description}`;
+let precipitationElement = document.querySelector("#precipitation");
+precipitationElement.innerHTML = `${response.data.rain['1h']}`;
 }
+
 
 function showCurrentPosition (position) {
 
