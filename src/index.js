@@ -40,12 +40,7 @@ iconElement.setAttribute("src", `images/iconweather-${response.data.weather[0].i
 
 function showCurrentPosition (position) {
 
-   console.log(position);
-
   let apiKey = "8642e71d13ee9b1f2a3fb493a276fb59";
-
-  console.log(position.coords.latitude);
-  console.log(position.coords.longitude);
   let long = position.coords.longitude;
   let lat = position.coords.latitude;
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${long}&appid=${apiKey}&units=metric`;
@@ -55,7 +50,6 @@ function showCurrentPosition (position) {
 
 function displayCurrentcity(event)
 {
-console.log ("hello");
 navigator.geolocation.getCurrentPosition(showCurrentPosition);
 
 }
