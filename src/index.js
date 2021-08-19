@@ -39,7 +39,7 @@ days.forEach(function (day) {
 forecastamHtml = forecastamHtml + `<div class="col-sm">
         <p>
         <div class="symbol">
-          <img src="images\iconfinder_weather-30_1530365.png" class="symbola" />
+          <img src="images/iconweather-02d.png" class="symbola" />
         </div>
         <div class="date">
           ${day}
@@ -71,7 +71,7 @@ days.forEach(function (day) {
 forecastpmHtml = forecastpmHtml + `<div class="col-sm">
         <p>
         <div class="symbol">
-          <img src="images\iconfinder_weather-30_1530365.png" class="symbola" />
+          <img src="images/iconweather-02n.png" class="symbola" />
         </div>
         <div class="date">
           ${day}
