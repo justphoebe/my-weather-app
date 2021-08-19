@@ -21,6 +21,7 @@ axios.get(apiUrl).then(editHeading);
 
 function displayForecast () { 
 let forecastamElement = document.querySelector("#forecastam");
+let forecastpmElement = document.querySelector("#forecastpm");
 let forecastamHtml =  `    <div class="row am">
       <div class="col-sm">
         <p>
@@ -53,7 +54,41 @@ forecastamHtml = forecastamHtml + `<div class="col-sm">
 
 forecastamHtml = forecastamHtml + `</div>`;
 forecastamElement.innerHTML = forecastamHtml;
-});}
+});
+
+let forecastpmHtml =  `    <div class="row pm">
+      <div class="col-sm">
+        <p>
+        <div class="time">
+          pm
+        </div>
+
+        </p>
+      </div>
+     
+    `;
+days.forEach(function (day) {
+forecastpmHtml = forecastpmHtml + `<div class="col-sm">
+        <p>
+        <div class="symbol">
+          <img src="images\iconfinder_weather-30_1530365.png" class="symbola" />
+        </div>
+        <div class="date">
+          ${day}
+        </div>
+        <div class="forecast">
+          10° 1°
+        </div>
+
+        </p>
+
+`;
+
+forecastpmHtml = forecastpmHtml + `</div>`;
+forecastpmElement.innerHTML = forecastpmHtml;
+});
+
+}
 
 function editHeading (response){
 console.log (response);
