@@ -77,18 +77,20 @@ let forecastpmHtml =  `    <div class="row pm">
       </div>
      
     `;
-days.forEach(function (day) {
+forecast.forEach(function (forecastDay, index) {
+  if (index < 6 && index > 0){
+let icon = forecastDay.weather[0].icon;
+let newIcon = icon.replace(/d/g, "n");
 forecastpmHtml = forecastpmHtml + `<div class="col-sm">
         <p>
         <div class="symbol">
-          <img src="images/iconweather-02n.png" class="symbola" />
+          <img src="images/iconweather-${newIcon}.png" class="symbola" />
         </div>
         <div class="date">
-          ${day}
+          ${formatDate(forecastDay.dt)}
         </div>
         <div class="forecast">
-          10° 1°
-        </div>
+${Math.round(forecastDay.temp.eve)}° ${Math.round(forecastDay.temp.night)}°        </div>
 
         </p>
 
@@ -96,7 +98,7 @@ forecastpmHtml = forecastpmHtml + `<div class="col-sm">
 
 forecastpmHtml = forecastpmHtml + `</div>`;
 forecastpmElement.innerHTML = forecastpmHtml;
-});
+}});
 
 }
 
