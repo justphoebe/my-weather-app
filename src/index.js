@@ -22,7 +22,7 @@ axios.get(apiUrl).then(editHeading);
 function formatDate (timestamp){
   let date = new Date(timestamp*1000);
   let day = date.getDay();
-  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  let days = ["sunday", "monday", "tuesday", "wednesday", "thursday", "friday", "saturday"];
   return days[day];
 
 
