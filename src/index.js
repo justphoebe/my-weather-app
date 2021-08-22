@@ -55,7 +55,7 @@ forecastamHtml = forecastamHtml + `<div class="col-sm">
           ${formatDate(forecastDay.dt)}
         </div>
         <div class="forecast">
-          ${Math.round(forecastDay.temp.max)}° ${Math.round(forecastDay.temp.min)}°
+          ${Math.round(forecastDay.temp.max)}° <span class="low">${Math.round(forecastDay.temp.min)}°</span>
         </div>
 
         </p>
@@ -90,7 +90,7 @@ forecastpmHtml = forecastpmHtml + `<div class="col-sm">
           ${formatDate(forecastDay.dt)}
         </div>
         <div class="forecast">
-${Math.round(forecastDay.temp.eve)}° ${Math.round(forecastDay.temp.night)}°        </div>
+${Math.round(forecastDay.temp.eve)}° <span class="low">${Math.round(forecastDay.temp.night)}° </span>       </div>
 
         </p>
 
@@ -175,4 +175,3 @@ let celsiustemperature = null;
 
 displayCurrentcity();
 displayForecast ();
-
