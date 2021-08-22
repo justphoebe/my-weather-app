@@ -15,6 +15,36 @@ h1.title {
 a {
   color: aliceblue;
 }
+.button-row {
+  margin-top: 10px;
+  margin-left: 0px;
+  margin-bottom: 0px;
+  margin-right: 0px;
+}
+
+.myButton {
+  display: inline-block;
+  padding: 0.35em 1.2em;
+  border: 0.1em solid #ffffff;
+  background-color: #757575;
+  border-radius: 0.12em;
+  box-sizing: border-box;
+  margin: 10px, 0px, 0px, 0px;
+  text-decoration: none;
+  font-family: "Roboto", sans-serif;
+  font-weight: 300;
+  color: #ffffff;
+  text-align: center;
+  transition: all 0.2s;
+}
+.myButton:hover {
+  color: #dddddd;
+  border-color: #dddddd;
+}
+.myButton:active {
+  color: #bbbbbb;
+  border-color: #bbbbbb;
+}
 
 .form-control {
   border-radius: 0.7rem;
