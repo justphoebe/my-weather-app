@@ -12,6 +12,10 @@ h1.title {
   letter-spacing: 1.5px;
 }
 
+a {
+  color: aliceblue;
+}
+
 .form-control {
   border-radius: 0.7rem;
   background-color: lightgray;
