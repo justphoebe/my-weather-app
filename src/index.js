@@ -19,7 +19,18 @@ axios.get(apiUrl).then(editHeading);
 
 }
 
-function displayForecast () { 
+function formatDate (timestamp){
+  let date = new Date(timestamp*1000);
+  let day = date.getDay();
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
+  return days[day];
+
+
+}
+
+function displayForecast (response) { 
+console.log(response);
+let forecast = response.data.daily;
 let forecastamElement = document.querySelector("#forecastam");
 let forecastpmElement = document.querySelector("#forecastpm");
 let forecastamHtml =  `    <div class="row am">
@@ -33,19 +44,18 @@ let forecastamHtml =  `    <div class="row am">
       </div>
      
     `;
-let days = ["monday", "tuesday", "wednesday", "thursday", "friday"];
-
-days.forEach(function (day) {
+forecast.forEach(function (forecastDay,index) {
+  if (index < 6 && index > 0) {
 forecastamHtml = forecastamHtml + `<div class="col-sm">
         <p>
         <div class="symbol">
-          <img src="images/iconweather-02d.png" class="symbola" />
-        </div>
+          <img src="images/iconweather-${forecastDay.weather[0].icon}.png" class="symbola" />
+        </div> 
         <div class="date">
-          ${day}
+          ${formatDate(forecastDay.dt)}
         </div>
         <div class="forecast">
-          10° 1°
+          ${Math.round(forecastDay.temp.max)}° ${Math.round(forecastDay.temp.min)}°
         </div>
 
         </p>
@@ -54,7 +64,7 @@ forecastamHtml = forecastamHtml + `<div class="col-sm">
 
 forecastamHtml = forecastamHtml + `</div>`;
 forecastamElement.innerHTML = forecastamHtml;
-});
+}});
 
 let forecastpmHtml =  `    <div class="row pm">
       <div class="col-sm">
@@ -111,6 +121,10 @@ iconElement.setAttribute("src", `images/iconweather-${response.data.weather[0].i
 iconElement.setAttribute("alt", `${response.data.weather[0].description}`);
 let descriptionElement = document.querySelector("#description");
 descriptionElement.innerHTML = `${response.data.weather[0].description}`;
+let apiforecastKey = "8642e71d13ee9b1f2a3fb493a276fb59";
+let apiUrl = `https://api.openweathermap.org/data/2.5/onecall?lat=${response.data.coord.lat}&lon=${response.data.coord.lon}&appid=${apiforecastKey}&units=metric`;
+console.log (apiUrl);
+axios.get(apiUrl).then(displayForecast);
 let precipitationElement = document.querySelector("#precipitation");
 precipitationElement.innerHTML = `${response.data.rain['1h']}`;
 }
